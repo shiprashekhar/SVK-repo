@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20200822 15:40:54.408" generator="Robot 3.1.2 (Python 2.7.17 on darwin)">
+<suite source="/Users/shiprashekhar/SVK-demo/Tests/customer.robot" id="s1" name="Customer">
+<test id="s1-t1" name="TC1: Verify admin can sign in ERP account using correct password">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>https://deverp.supraenergy.in/</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200822 15:40:55.292" level="INFO">Opening browser 'chrome' to base url 'https://deverp.supraenergy.in/'.</msg>
+<status status="PASS" endtime="20200822 15:41:01.889" starttime="20200822 15:40:55.292"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20200822 15:41:02.097" starttime="20200822 15:41:01.890"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>//input[@placeholder='Email']</arg>
+<arg>erp</arg>
+</arguments>
+<msg timestamp="20200822 15:41:02.098" level="INFO">Typing text 'erp' into text field '//input[@placeholder='Email']'.</msg>
+<status status="PASS" endtime="20200822 15:41:02.471" starttime="20200822 15:41:02.098"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by ``locator``.</doc>
+<arguments>
+<arg>//input[@placeholder='Password']</arg>
+<arg>${pass}</arg>
+</arguments>
+<msg timestamp="20200822 15:41:02.472" level="INFO">Typing password into text field '//input[@placeholder='Password']'.</msg>
+<status status="PASS" endtime="20200822 15:41:02.750" starttime="20200822 15:41:02.471"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>//button[@id='kt_login_signin_submit']</arg>
+</arguments>
+<msg timestamp="20200822 15:41:02.751" level="INFO">Clicking element '//button[@id='kt_login_signin_submit']'.</msg>
+<status status="PASS" endtime="20200822 15:41:07.247" starttime="20200822 15:41:02.750"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>//h3[@class='kt-header__title kt-grid__item']</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:07.273" starttime="20200822 15:41:07.248"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Dashboard</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:07.308" starttime="20200822 15:41:07.274"></status>
+</kw>
+<status status="PASS" endtime="20200822 15:41:07.309" critical="yes" starttime="20200822 15:40:55.288"></status>
+</test>
+<test id="s1-t2" name="TC2: Verify admin can create a new customer">
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element ``locator``.</doc>
+<arguments>
+<arg>//i[@class='kt-menu__link-icon flaticon2-group']</arg>
+</arguments>
+<msg timestamp="20200822 15:41:07.312" level="INFO">Simulating Mouse Over on element '//i[@class='kt-menu__link-icon flaticon2-group']'.</msg>
+<status status="PASS" endtime="20200822 15:41:07.430" starttime="20200822 15:41:07.311"></status>
+</kw>
+<kw name="Wait Until Page Does Not Contain" library="Selenium2Library">
+<doc>Waits until ``text`` disappears from current page.</doc>
+<arguments>
+<arg>Loading ...</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:10.224" starttime="20200822 15:41:07.431"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>//span[contains(text(),'Customers')]</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:10.247" starttime="20200822 15:41:10.224"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>//span[contains(text(),'Customers')]</arg>
+</arguments>
+<msg timestamp="20200822 15:41:10.248" level="INFO">Clicking element '//span[contains(text(),'Customers')]'.</msg>
+<status status="PASS" endtime="20200822 15:41:10.986" starttime="20200822 15:41:10.248"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>All Customers</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:11.042" starttime="20200822 15:41:10.986"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Add New</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:11.066" starttime="20200822 15:41:11.042"></status>
+</kw>
+<kw name="Click Link" library="Selenium2Library">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>//div[@id='CustomerTableSection']//div[contains(@class,'kt-portlet__head kt-portlet__head--lg')]//a[1]</arg>
+</arguments>
+<msg timestamp="20200822 15:41:11.067" level="INFO">Clicking link '//div[@id='CustomerTableSection']//div[contains(@class,'kt-portlet__head kt-portlet__head--lg')]//a[1]'.</msg>
+<status status="PASS" endtime="20200822 15:41:11.218" starttime="20200822 15:41:11.066"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Add Customer</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:11.240" starttime="20200822 15:41:11.218"></status>
+</kw>
+<kw name="Set random" library="main">
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>4</arg>
+<arg>[LETTERS]</arg>
+</arguments>
+<assign>
+<var>${user}</var>
+</assign>
+<msg timestamp="20200822 15:41:11.243" level="INFO">${user} = Rkxu</msg>
+<status status="PASS" endtime="20200822 15:41:11.243" starttime="20200822 15:41:11.242"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${userNew}</arg>
+<arg>${user}</arg>
+</arguments>
+<msg timestamp="20200822 15:41:11.246" level="INFO">${userNew} = Rkxu</msg>
+<status status="PASS" endtime="20200822 15:41:11.246" starttime="20200822 15:41:11.243"></status>
+</kw>
+<status status="PASS" endtime="20200822 15:41:11.246" starttime="20200822 15:41:11.241"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=customer_name</arg>
+<arg>Test${userNew}</arg>
+</arguments>
+<msg timestamp="20200822 15:41:11.248" level="INFO">Typing text 'TestRkxu' into text field 'id=customer_name'.</msg>
+<status status="PASS" endtime="20200822 15:41:11.479" starttime="20200822 15:41:11.247"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=line_1</arg>
+<arg>Palanpur</arg>
+</arguments>
+<msg timestamp="20200822 15:41:11.480" level="INFO">Typing text 'Palanpur' into text field 'id=line_1'.</msg>
+<status status="PASS" endtime="20200822 15:41:11.708" starttime="20200822 15:41:11.479"></status>
+</kw>
+<kw name="Select From List By Label" library="Selenium2Library">
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<arguments>
+<arg>id=country_id</arg>
+<arg>India</arg>
+</arguments>
+<msg timestamp="20200822 15:41:11.709" level="INFO">Selecting options from selection list 'id=country_id' by label India.</msg>
+<status status="PASS" endtime="20200822 15:41:11.883" starttime="20200822 15:41:11.709"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>id=state_id</arg>
+</arguments>
+<msg timestamp="20200822 15:41:11.884" level="INFO">Clicking element 'id=state_id'.</msg>
+<status status="PASS" endtime="20200822 15:41:12.138" starttime="20200822 15:41:11.884"></status>
+</kw>
+<kw name="Select From List By Label" library="Selenium2Library">
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<arguments>
+<arg>id=state_id</arg>
+<arg>Karnataka</arg>
+</arguments>
+<msg timestamp="20200822 15:41:12.139" level="INFO">Selecting options from selection list 'id=state_id' by label Karnataka.</msg>
+<status status="PASS" endtime="20200822 15:41:12.570" starttime="20200822 15:41:12.138"></status>
+</kw>
+<kw name="Select From List By Label" library="Selenium2Library">
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<arguments>
+<arg>id=add_city</arg>
+<arg>Hubli</arg>
+</arguments>
+<msg timestamp="20200822 15:41:12.571" level="INFO">Selecting options from selection list 'id=add_city' by label Hubli.</msg>
+<status status="PASS" endtime="20200822 15:41:12.924" starttime="20200822 15:41:12.571"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=zipcode</arg>
+<arg>400100</arg>
+</arguments>
+<msg timestamp="20200822 15:41:12.924" level="INFO">Typing text '400100' into text field 'id=zipcode'.</msg>
+<status status="PASS" endtime="20200822 15:41:13.084" starttime="20200822 15:41:12.924"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>id=addBtn</arg>
+</arguments>
+<msg timestamp="20200822 15:41:13.085" level="INFO">Clicking element 'id=addBtn'.</msg>
+<status status="PASS" endtime="20200822 15:41:13.222" starttime="20200822 15:41:13.084"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Data saved successfully.</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:13.476" starttime="20200822 15:41:13.223"></status>
+</kw>
+<status status="PASS" endtime="20200822 15:41:13.476" critical="yes" starttime="20200822 15:41:07.310"></status>
+</test>
+<test id="s1-t3" name="TC3: Verify admin can search the newly created customer">
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>id=generalSearch</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:13.495" starttime="20200822 15:41:13.478"></status>
+</kw>
+<kw name="Press Key" library="Selenium2Library">
+<doc>Deprecated use `Press Keys` instead.</doc>
+<arguments>
+<arg>id=generalSearch</arg>
+<arg>Test${userNew}</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:13.679" starttime="20200822 15:41:13.495"></status>
+</kw>
+<kw name="Press Key" library="Selenium2Library">
+<doc>Deprecated use `Press Keys` instead.</doc>
+<arguments>
+<arg>id=generalSearch</arg>
+<arg>\\13</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:13.733" starttime="20200822 15:41:13.681"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>//td[contains(text(),'Test${userNew}')]</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:14.237" starttime="20200822 15:41:13.734"></status>
+</kw>
+<kw name="Element Text Should Be" library="Selenium2Library">
+<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
+<arguments>
+<arg>//td[contains(text(),'Test${userNew}')]</arg>
+<arg>Test${userNew}</arg>
+</arguments>
+<msg timestamp="20200822 15:41:14.238" level="INFO">Verifying element '//td[contains(text(),'TestRkxu')]' contains exact text 'TestRkxu'.</msg>
+<status status="PASS" endtime="20200822 15:41:14.286" starttime="20200822 15:41:14.237"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>View</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:14.312" starttime="20200822 15:41:14.286"></status>
+</kw>
+<kw name="Wait Until Page Does Not Contain" library="Selenium2Library">
+<doc>Waits until ``text`` disappears from current page.</doc>
+<arguments>
+<arg>Data saved successfully.</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:20.078" starttime="20200822 15:41:14.312"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>View</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:20.089" starttime="20200822 15:41:20.079"></status>
+</kw>
+<kw name="Click Link" library="Selenium2Library">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>View</arg>
+</arguments>
+<msg timestamp="20200822 15:41:20.090" level="INFO">Clicking link 'View'.</msg>
+<status status="PASS" endtime="20200822 15:41:20.763" starttime="20200822 15:41:20.089"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Test${userNew}</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:20.852" starttime="20200822 15:41:20.764"></status>
+</kw>
+<status status="PASS" endtime="20200822 15:41:20.853" critical="yes" starttime="20200822 15:41:13.477"></status>
+</test>
+<test id="s1-t4" name="TC4: Verify admin can edit the details of newly created customer">
+<kw name="Wait Until Page Does Not Contain" library="Selenium2Library">
+<doc>Waits until ``text`` disappears from current page.</doc>
+<arguments>
+<arg>Loading ...</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:23.862" starttime="20200822 15:41:20.856"></status>
+</kw>
+<kw name="Click Link" library="Selenium2Library">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>Edit</arg>
+</arguments>
+<msg timestamp="20200822 15:41:23.862" level="INFO">Clicking link 'Edit'.</msg>
+<status status="PASS" endtime="20200822 15:41:23.947" starttime="20200822 15:41:23.862"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>id=customer_name</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:24.221" starttime="20200822 15:41:23.948"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=customer_name</arg>
+<arg>Test${userNew}-Edited</arg>
+</arguments>
+<msg timestamp="20200822 15:41:24.222" level="INFO">Typing text 'TestRkxu-Edited' into text field 'id=customer_name'.</msg>
+<status status="PASS" endtime="20200822 15:41:24.590" starttime="20200822 15:41:24.221"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>id=editBtnCust</arg>
+</arguments>
+<msg timestamp="20200822 15:41:24.591" level="INFO">Clicking button 'id=editBtnCust'.</msg>
+<status status="PASS" endtime="20200822 15:41:24.746" starttime="20200822 15:41:24.591"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Data saved successfully.</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:24.975" starttime="20200822 15:41:24.746"></status>
+</kw>
+<kw name="Wait Until Page Does Not Contain" library="Selenium2Library">
+<doc>Waits until ``text`` disappears from current page.</doc>
+<arguments>
+<arg>Data saved successfully.</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:31.608" starttime="20200822 15:41:24.976"></status>
+</kw>
+<kw name="Wait Until Page Does Not Contain" library="Selenium2Library">
+<doc>Waits until ``text`` disappears from current page.</doc>
+<arguments>
+<arg>Loading ...</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:31.620" starttime="20200822 15:41:31.608"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>//button[contains(text(),'Back')]</arg>
+</arguments>
+<msg timestamp="20200822 15:41:31.621" level="INFO">Clicking button '//button[contains(text(),'Back')]'.</msg>
+<status status="PASS" endtime="20200822 15:41:31.712" starttime="20200822 15:41:31.620"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Test${userNew}-Edited</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:31.730" starttime="20200822 15:41:31.712"></status>
+</kw>
+<status status="PASS" endtime="20200822 15:41:31.730" critical="yes" starttime="20200822 15:41:20.854"></status>
+</test>
+<test id="s1-t5" name="TC5: Verify admin can add the contact details for newly created customer">
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>//button[contains(text(),'Manage Contacts')]</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:31.748" starttime="20200822 15:41:31.732"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>//button[contains(text(),'Manage Contacts')]</arg>
+</arguments>
+<msg timestamp="20200822 15:41:31.748" level="INFO">Clicking button '//button[contains(text(),'Manage Contacts')]'.</msg>
+<status status="PASS" endtime="20200822 15:41:31.833" starttime="20200822 15:41:31.748"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Contact Details</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:31.855" starttime="20200822 15:41:31.834"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Add</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:31.879" starttime="20200822 15:41:31.856"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>//button[text()='Add']</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:32.133" starttime="20200822 15:41:31.879"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>//button[text()='Add']</arg>
+</arguments>
+<msg timestamp="20200822 15:41:32.134" level="INFO">Clicking button '//button[text()='Add']'.</msg>
+<status status="PASS" endtime="20200822 15:41:32.252" starttime="20200822 15:41:32.133"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Add New</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:32.277" starttime="20200822 15:41:32.253"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>id=contact_type</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:32.293" starttime="20200822 15:41:32.278"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Contact Type</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:32.344" starttime="20200822 15:41:32.294"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Contact</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:32.410" starttime="20200822 15:41:32.345"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Visibility</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:32.449" starttime="20200822 15:41:32.411"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>0.2 seconds</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:32.450" starttime="20200822 15:41:32.449"></status>
+</kw>
+<kw name="Select From List By Label" library="Selenium2Library">
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<arguments>
+<arg>id=contact_type</arg>
+<arg>Phone</arg>
+</arguments>
+<msg timestamp="20200822 15:41:32.451" level="INFO">Selecting options from selection list 'id=contact_type' by label Phone.</msg>
+<status status="PASS" endtime="20200822 15:41:33.974" starttime="20200822 15:41:32.450"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=add_contact</arg>
+<arg>9921345466</arg>
+</arguments>
+<msg timestamp="20200822 15:41:33.975" level="INFO">Typing text '9921345466' into text field 'id=add_contact'.</msg>
+<status status="PASS" endtime="20200822 15:41:34.749" starttime="20200822 15:41:33.975"></status>
+</kw>
+<kw name="Select From List By Label" library="Selenium2Library">
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<arguments>
+<arg>id=visibility</arg>
+<arg>Display where the address is used</arg>
+</arguments>
+<msg timestamp="20200822 15:41:34.749" level="INFO">Selecting options from selection list 'id=visibility' by label Display where the address is used.</msg>
+<status status="PASS" endtime="20200822 15:41:36.271" starttime="20200822 15:41:34.749"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>id=addBtnContactAddress</arg>
+</arguments>
+<msg timestamp="20200822 15:41:36.272" level="INFO">Clicking button 'id=addBtnContactAddress'.</msg>
+<status status="PASS" endtime="20200822 15:41:37.388" starttime="20200822 15:41:36.271"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Contact Added Successfully</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:37.615" starttime="20200822 15:41:37.389"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>//button[text()='List All']</arg>
+</arguments>
+<msg timestamp="20200822 15:41:37.616" level="INFO">Clicking button '//button[text()='List All']'.</msg>
+<status status="PASS" endtime="20200822 15:41:39.146" starttime="20200822 15:41:37.615"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Showing 1 to 1 of 1 entries</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:39.374" starttime="20200822 15:41:39.147"></status>
+</kw>
+<status status="PASS" endtime="20200822 15:41:39.374" critical="yes" starttime="20200822 15:41:31.731"></status>
+</test>
+<test id="s1-t6" name="TC6: Verify admin can edit the contact details for newly created customer">
+<kw name="Page Should Contain Link" library="Selenium2Library">
+<doc>Verifies link identified by ``locator`` is found from current page.</doc>
+<arguments>
+<arg>Edit</arg>
+</arguments>
+<msg timestamp="20200822 15:41:39.810" level="INFO">Current page contains link 'Edit'.</msg>
+<status status="PASS" endtime="20200822 15:41:39.811" starttime="20200822 15:41:39.376"></status>
+</kw>
+<kw name="Click Link" library="Selenium2Library">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=(//a[contains(text(),'Edit')])[2]</arg>
+</arguments>
+<msg timestamp="20200822 15:41:39.811" level="INFO">Clicking link 'xpath=(//a[contains(text(),'Edit')])[2]'.</msg>
+<status status="PASS" endtime="20200822 15:41:40.531" starttime="20200822 15:41:39.811"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Edit Contact</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:40.759" starttime="20200822 15:41:40.531"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=contact_edit</arg>
+<arg>9988776655</arg>
+</arguments>
+<msg timestamp="20200822 15:41:40.760" level="INFO">Typing text '9988776655' into text field 'id=contact_edit'.</msg>
+<status status="PASS" endtime="20200822 15:41:41.556" starttime="20200822 15:41:40.760"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>id=editBtnContactAddress</arg>
+</arguments>
+<msg timestamp="20200822 15:41:41.557" level="INFO">Clicking button 'id=editBtnContactAddress'.</msg>
+<status status="PASS" endtime="20200822 15:41:42.666" starttime="20200822 15:41:41.556"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Contact Saved Successfully</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:42.896" starttime="20200822 15:41:42.667"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=(//button[text()='List All'])[2]</arg>
+</arguments>
+<msg timestamp="20200822 15:41:42.896" level="INFO">Clicking button 'xpath=(//button[text()='List All'])[2]'.</msg>
+<status status="PASS" endtime="20200822 15:41:44.006" starttime="20200822 15:41:42.896"></status>
+</kw>
+<status status="PASS" endtime="20200822 15:41:44.007" critical="yes" starttime="20200822 15:41:39.375"></status>
+</test>
+<test id="s1-t7" name="TC7: Verify admin can delete the contact details for newly created customer">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Showing 1 to 1 of 1 entries</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:44.227" starttime="20200822 15:41:44.009"></status>
+</kw>
+<kw name="Page Should Contain Link" library="Selenium2Library">
+<doc>Verifies link identified by ``locator`` is found from current page.</doc>
+<arguments>
+<arg>Delete</arg>
+</arguments>
+<msg timestamp="20200822 15:41:44.657" level="INFO">Current page contains link 'Delete'.</msg>
+<status status="PASS" endtime="20200822 15:41:44.658" starttime="20200822 15:41:44.227"></status>
+</kw>
+<kw name="Click Link" library="Selenium2Library">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>Delete</arg>
+</arguments>
+<msg timestamp="20200822 15:41:44.658" level="INFO">Clicking link 'Delete'.</msg>
+<status status="PASS" endtime="20200822 15:41:45.361" starttime="20200822 15:41:44.658"></status>
+</kw>
+<kw name="Handle Alert" library="Selenium2Library">
+<doc>Handles the current alert and returns its message.</doc>
+<arguments>
+<arg>action=ACCEPT</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:45.981" starttime="20200822 15:41:45.361"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Contact Deleted Successfully</arg>
+</arguments>
+<status status="PASS" endtime="20200822 15:41:46.245" starttime="20200822 15:41:45.981"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>//div[@id='add-contact-success-ad']//span[contains(text(),'×')]</arg>
+</arguments>
+<msg timestamp="20200822 15:41:46.245" level="INFO">Clicking element '//div[@id='add-contact-success-ad']//span[contains(text(),'×')]'.</msg>
+<status status="PASS" endtime="20200822 15:41:46.727" starttime="20200822 15:41:46.245"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>//div[@id='manageContactsAddress']//div[@class='modal-header']//button[@class='close']</arg>
+</arguments>
+<msg timestamp="20200822 15:41:46.728" level="INFO">Clicking element '//div[@id='manageContactsAddress']//div[@class='modal-header']//button[@class='close']'.</msg>
+<status status="PASS" endtime="20200822 15:41:47.203" starttime="20200822 15:41:46.728"></status>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20200822 15:41:47.556" starttime="20200822 15:41:47.204"></status>
+</kw>
+<status status="PASS" endtime="20200822 15:41:47.556" critical="yes" starttime="20200822 15:41:44.008"></status>
+</test>
+<doc>Testcases for SupraERP</doc>
+<status status="PASS" endtime="20200822 15:41:47.559" starttime="20200822 15:40:54.411"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="7">Critical Tests</stat>
+<stat fail="0" pass="7">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Customer" pass="7">Customer</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
