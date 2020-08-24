@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation     Testcases for SupraERP new
+Documentation     Testcases for SupraERP demo
 Resource    ${env}/Resources/page_objects/common_settings.robot
 
 
