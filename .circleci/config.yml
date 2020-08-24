@@ -1,3 +1,5 @@
+version: 2
+jobs: 
 test:
   override:
     - robot -d results -v inputEmail:shiprasshekhar@gmail.com  /Users/shiprashekhar/SVK-demo/Tests/customer.robot
