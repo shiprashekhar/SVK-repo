@@ -1,3 +1,3 @@
 # SVK-repo
 
-This is info about the project.
+This is information about the project.
